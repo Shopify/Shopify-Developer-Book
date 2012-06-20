@@ -46,10 +46,11 @@ You can add connections to as many shops as needed and you can list them all. Wh
 
 A second useful command line tool that Shopify provides is not in the `shopify_api` gem but a separate gem called `shopify_theme`. With this gem installed on a system, you can use the command `theme` to develop the shop theme. `theme` offers a simple workflow. The first thing to do with a shop development project is to create a directory to hold all the files that make up the merchant’s theme.
 
-    $ mkdir fizz-buzz.com
-    $ cd fizz-buzz.com
-    $ theme configuration
-
+@@@ html
+  $ mkdir fizz-buzz.com
+  $ cd fizz-buzz.com
+  $ theme configuration
+@@@
 
 <div class="figure">
   <img src="../images/theme%20console2.png" alt="Output of the Theme Command Line Console" />
@@ -61,14 +62,17 @@ The listing of available options and arguments to the `theme` commmand is slight
    
 Once the assets are downloaded, set up the files under version control. Make a local repository with git and store the client's code under version control for safety. Advanced developers might even add a git remote pointing at github, so that all the work is safely stored in a private repository there too. 
 
+@@@ html
     $ git init
     $ git add .
     $ git commit -m 'initial commit of Shopify code for client XYZ'
-    
+@@@
+
 With the code in git, it is a great time to start working on the theme. Use the *theme watch* command to _watch_ the directory for any changes. As soon as a change is registered to a file, the theme watcher will transmit the changed file to the client site. Any changes can be stored in git. This ensures a smooth and hassle free development experience.
 
+@@@ html
     $ git commit -am 'Fixed that pesky jQuery error the client had from \
      blindly copying and pasting some bad code off the Internet'
-    
+@@@
+
 This is a very productive and safe workflow. Because the code is under version control, it is easy to edit theme code using your favourite tools. In the future, if the client wants more work done, you just use the `theme download` command to grab new files or changes, even if they are initiated by the merchant or others. Git will keep track of all changes. You have a fighting chance when you are not the only person touching or editing a merchant site. Squashing some other designer's work or other person's files is rarely an acceptable practice!
- 
